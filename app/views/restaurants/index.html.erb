@@ -2,17 +2,13 @@
 	<div class="container-fluid">
 	  <div class="row">
 	  	<div class="col-md-12 col-md-offset-1">
-				<h1>Restaurant</h1>
-				<h2>list</h2>
-				<% @restaurants.each do |restaurant| %>
-            <a href="post.html">
-                <h2 class="post-title">
-                    <%= link_to restaurant.title, restaurant %>
-                </h2>
-            </a>
-            <p class="post-meta">Posted by <a href="#">Ahmad Faris</a> <%= post.created_at.strftime("%B, %d, %Y")%></p>
-        <hr>
-        <% end %>
+				<h1>Restaurant List</h1>
+				  <% @restaurants.each do |restaurant| %>
+				    <li>
+				      <%= link_to restaurant.name, restaurant %>
+				    </li>
+				  <% end %>
+			</div>
 		</div>
 	</div>
 </div>

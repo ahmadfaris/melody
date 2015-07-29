@@ -1,9 +1,15 @@
 class RestaurantsController < ApplicationController
   def index
-  	@restaurants = Restaurant.all.order('created_at DESC')
+  	@restaurants = Restaurant.all
+
+  	respond_to do |format|
+      format.html { render 'index' }
+      format.json { render json: @restaurants}
+    end
   end
 
   def show
+  	@restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -23,5 +29,6 @@ class RestaurantsController < ApplicationController
 
   private
   	def restaurant_params
+  		params.require(:restaurant).permit(:name, :address)
   	end
 end
