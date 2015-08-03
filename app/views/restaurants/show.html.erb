@@ -4,6 +4,9 @@
       <h1>
         <%= @restaurant.name %>
       </h1>
+
+      <%= image_tag @restaurant.image.url(:medium) %>
+      
       <h2>
       	<li><%= @restaurant.address %></li>
       	<li><%= @restaurant.category %></li>
