@@ -52,4 +52,7 @@ group :production do
   gem 'puma',           '2.11.1'
 end
 
-ruby "2.2.2"
+# ruby "2.2.2"
+
+# Solve the timezone error on windows, need to include this gem
+gem 'tzinfo-data'
