@@ -1,33 +1,9 @@
 <div class="page_wrapper">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%
-=begin %>
-      <h1>
-        <%= @restaurant.name %>
-      </h1>
-
-      <%= image_tag @restaurant.image.url(:medium) %>
-
-      <h2>
-      	<li><%= @restaurant.address %></li>
-      	<li><%= @restaurant.category %></li>
-      	<li><%= @restaurant.lat %></li>
-      	<li><%= @restaurant.lng %></li>
-      </h2>
-    </section>
-  </aside>
-</div>
-<%
-=end %>
-
-
-<div class="main_content">
-  <div class="row" id="recipe_top">
-    <div class="col-md-4">
-      <%= image_tag @restaurant.image.url(:medium), class: "recipe_image" %>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-2">
+      <%= image_tag @restaurant.image.url(:thumb), class: "recipe_image" %>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
       <div id="recipe_info">
         <h1>
           <%= @restaurant.name %>
@@ -67,7 +43,7 @@
       </div>
     </div>
   </div>
-  
+
 <%
 =end %>
 
