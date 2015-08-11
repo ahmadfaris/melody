@@ -1,12 +1,12 @@
 class Restaurant < ActiveRecord::Base
 	belongs_to :user
-	has_many :food, dependent: :destroy
-	has_many :drink, dependent: :destroy
+	has_many :foods, dependent: :destroy
+	has_many :drinks, dependent: :destroy
 
-	accepts_nested_attributes_for :food,
+	accepts_nested_attributes_for :foods,
   															reject_if: proc { |attributes| attributes['name'].blank? },
   															allow_destroy: true
- 	accepts_nested_attributes_for :drink,
+ 	accepts_nested_attributes_for :drinks,
   															reject_if: proc { |attributes| attributes['name'].blank? },
   															allow_destroy: true
 

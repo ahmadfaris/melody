@@ -2,6 +2,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$gray: #C8C8C8;
+
+body{
+  background-color: $gray; 
+}
 .page_wrapper{
 	margin: 50px 70px;
 	/*background: red;*/
@@ -9,5 +14,9 @@
 
 .bground{
 	background-size:100%;
+}
+
+.table-responsive{
+  width: 70%;
 }
 

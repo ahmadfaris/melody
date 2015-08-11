@@ -23,4 +23,26 @@
     <%= f.input :image, input_html: { class: 'form-control' } %>
     <%= f.submit "Create Restaurant", class: "btn btn-primary" %>
   </div>
+
+  <div id="foods">
+    <%= f.simple_fields_for :foods do |food| %>
+      <%= render 'food_fields', :f => food %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Food', f, :foods, class: "btn btn-default add-button" %>
+    </div>
+  </div>
+
+  <div id="drinks">
+    <%= f.simple_fields_for :drinks do |drink| %>
+      <%= render 'drink_fields', :f => drink %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Drink', f, :drinks, class: "btn btn-default add-button" %>
+    </div>
+  </div>
+
 <% end %>
+
+
+

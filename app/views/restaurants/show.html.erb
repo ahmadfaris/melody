@@ -4,16 +4,43 @@
       <%= image_tag @restaurant.image.url(:thumb), class: "recipe_image" %>
     </div>
     <div class="col-md-6">
-      <div id="recipe_info">
+      <div>
         <h1>
           <%= @restaurant.name %>
         </h1>
-        <p class="description">
+        <h3>
           <%= @restaurant.address %>
-        </p>
+        </h3>
+
+        <%= link_to "Back", root_path, class: "btn btn-default btn-xs" %>
+        <% if user_signed_in? %>
+          <%= link_to "Edit", edit_restaurant_path, class: "btn btn-default btn-xs" %>
+          <%= link_to "Delete", restaurant_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default btn-xs" %>
+        <% end %>
+
       </div>
     </div>
   </div>
+
+  <hr>
+  
+  <!-- <%= link_to "Add Food", root_path, class: "btn btn-default btn-xs" %> -->
+  <div class="row">
+    <div class="col-md-6">
+      <div id="ingredients">
+        <h2>Food</h2>
+        <ul>
+          <% @restaurant.foods.each do |food| %>
+            <li>
+              <%= food.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>Drink</h2>
 
   <%
 =begin %>
@@ -47,13 +74,4 @@
 <%
 =end %>
 
-  <div class="row">
-    <div class="col-md-12">
-      <%= link_to "Back", root_path, class: "btn btn-default" %>
-      <% if user_signed_in? %>
-        <%= link_to "Edit", edit_restaurant_path, class: "btn btn-default" %>
-        <%= link_to "Delete", restaurant_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default" %>
-      <% end %>
-    </div>
-  </div>
 </div>
