@@ -18,3 +18,6 @@
 
 /.idea
 /.idea/*
+
+# Ignore public development image
+/public/system/
