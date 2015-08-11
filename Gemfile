@@ -21,6 +21,7 @@ gem 'simple_form', '~> 3.1.0'
 gem 'paperclip', '~> 4.3.0'
 gem 'faker', '~> 1.4.3'
 gem 'cancancan', '~> 1.12.0'
+gem 'cocoon', '~> 1.2.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
