@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
   	@restaurants = Restaurant.all
+    @restaurant = Restaurant.new
     @food = Food.new
 
   	respond_to do |format|
@@ -53,7 +54,7 @@ class RestaurantsController < ApplicationController
 
   private
   	def restaurant_params
-  		params.require(:restaurant).permit(:name, :address, :category, :lat, :lng, :image, foods_attributes: [:id, :name, :price, :_destroy])
+  		params.require(:restaurant).permit(:name, :address, :category, :lat, :lng, :image, foods_attributes: [:id, :name, :price, :_destroy], drinks_attributes: [:id, :name, :price, :_destroy])
   	end
 
     def find_restaurant
