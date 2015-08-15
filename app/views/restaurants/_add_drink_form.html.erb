@@ -1,0 +1,31 @@
+<%= simple_form_for @restaurant, html: { multipart: true } do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="errors">
+      <p>
+        <%= @restaurant.errors.count %>
+        Prevented this log from saving
+      </p>
+      <ul>
+        <% @restaurant.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="panel-body">
+    <%= f.submit "Submit Drink", class: "btn btn-primary" %>
+  </div>
+
+  <div id="drinks">
+    <%= f.simple_fields_for :drinks do |drink| %>
+      <%= render 'drink_fields', :f => drink %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Drink', f, :drinks, class: "btn btn-primary add-button" %>
+    </div>
+  </div>
+
+<% end %>
+
