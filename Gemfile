@@ -23,6 +23,10 @@ gem 'faker', '~> 1.4.3'
 gem 'cancancan', '~> 1.12.0'
 gem 'cocoon', '~> 1.2.6'
 
+# Google maps
+gem 'geocoder'
+gem 'gmaps4rails', '~> 2.1.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
