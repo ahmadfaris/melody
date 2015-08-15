@@ -31,16 +31,17 @@
 
   <hr>
 
-  <!-- <%= link_to "Add Food", root_path, class: "btn btn-default btn-xs" %> -->
   <div class="row">
     <div class="col-md-6">
       <div id="ingredients">
         <h2>Food</h2>
 
-          <!-- Button trigger for food modal -->
-          <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addFoodModal">
-            Add Food
-          </button>
+          <% if user_signed_in? %>
+            <!-- Button trigger for food modal -->
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addFoodModal">
+              Add Food
+            </button>
+          <% end %>
 
           <!-- Food Modal -->
           <%= form_for(@restaurant) do |f| %>
@@ -74,6 +75,7 @@
             <li>
               <%= food.name %>
               <%= food.price %>
+              <%= image_tag food.image.url(:thumb) %>
             </li>
           <% end %>
         </ul>
@@ -87,10 +89,12 @@
       <div id="ingredients">
         <h2>Drink</h2>
 
-          <!-- Button trigger for drink modal -->
+          <% if user_signed_in? %>
+            <!-- Button trigger for drink modal -->
             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addDrinkModal">
               Add Drink
             </button>
+          <% end %>
 
             
 
@@ -122,6 +126,7 @@
         <ul>
           <% @restaurant.drinks.each do |drink| %>
             <li>
+              <%= image_tag drink.image.url(:thumb) %>
               <%= drink.name %>
               <%= drink.price %>
             </li>

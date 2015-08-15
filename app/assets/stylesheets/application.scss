@@ -2,11 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$gray: #C8C8C8;
+$gray: #E6E6E6;
 
-body{
-  background-color: $gray; 
-}
 .page_wrapper{
 	margin: 50px 70px;
 	/*background: red;*/
@@ -17,6 +14,47 @@ body{
 }
 
 .table-responsive{
-  width: 70%;
+  width: 80%;
 }
 
+.restaurant {
+  background: $gray;
+  border-radius: 1px;
+  margin: 40px 40px;
+  
+  .image_wrapper {
+    max-width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+  }
+  img {
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    &:hover {
+      transform: scale(1.075);
+    }
+  }
+  h2 {
+    /*padding: 15px 5%;*/
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+}
+
+.restaurant_wrapper{
+  border-color: red;
+}
+
+thead {
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 2.5;
+}
+
+#table{
+  margin-top: 20px;
+}
