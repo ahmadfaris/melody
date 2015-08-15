@@ -11,7 +11,17 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-  	@restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@restaurant) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+      marker.infowindow restaurant.address
+      marker.picture({
+       "url" => "http://www.hoyer-group.com/fileadmin/templates/hoyer_group/skeleton/img/gmaps-marker.png",
+       "width" =>  32,
+       "height" => 32})
+      marker.json({ name: restaurant.name })
+    end
   end
 
   def new
@@ -54,7 +64,7 @@ class RestaurantsController < ApplicationController
 
   private
   	def restaurant_params
-  		params.require(:restaurant).permit(:name, :address, :category, :lat, :lng, :image, foods_attributes: [:id, :image, :name, :price, :_destroy], drinks_attributes: [:id, :image, :name, :price, :_destroy])
+  		params.require(:restaurant).permit(:name, :address, :category, :latitude, :longitude, :image, foods_attributes: [:id, :image, :name, :price, :_destroy], drinks_attributes: [:id, :image, :name, :price, :_destroy])
   	end
 
     def find_restaurant
