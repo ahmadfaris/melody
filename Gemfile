@@ -22,6 +22,8 @@ gem 'paperclip', '~> 4.3.0'
 gem 'faker', '~> 1.4.3'
 gem 'cancancan', '~> 1.12.0'
 gem 'cocoon', '~> 1.2.6'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 # Google maps
 gem 'geocoder'
