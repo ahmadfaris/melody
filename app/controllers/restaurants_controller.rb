@@ -1,8 +1,10 @@
 class RestaurantsController < ApplicationController
   def index
   	@restaurants = Restaurant.all.page(params[:page]).per(9)
+    @restaurants = Restaurant.where(["name LIKE ?", "%#{params[:search]}%"]).page(params[:page]).per(9)
     @restaurant = Restaurant.new
     @food = Food.new
+
 
   	respond_to do |format|
       format.html { render 'index' }
