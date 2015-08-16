@@ -16,6 +16,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'devise', '~> 3.5.1'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'slim', '~> 3.0.6'
 gem 'simple_form', '~> 3.1.0'
 gem 'paperclip', '~> 4.3.0'

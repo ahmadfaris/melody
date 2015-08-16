@@ -42,4 +42,7 @@ Rails.application.configure do
 
   # Define paperclip path
   Paperclip.options[:command_path] = "/usr/local/bin/identify"
+
+  # ENV['FACEBOOK_APP_ID'] = "1635366583371925";
+  # ENV['FACEBOOK_SECRET'] = "836c92340da5c60b0d1d1f56077f2b62";
 end
